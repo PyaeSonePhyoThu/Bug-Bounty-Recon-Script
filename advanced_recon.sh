@@ -61,10 +61,10 @@ else
 fi
 
 echo "[*] Passive Parameter Discovery using Arjun..."
-arjun -u "https://$DOMAIN/endpoint.php" -oT arjun_passive.txt -t 10 --rate-limit 10 --passive -m GET,POST --headers "$HEADERS"
+arjun -u "https://$DOMAIN/" -oT arjun_passive.txt -t 10 --rate-limit 10 --passive -m GET,POST --headers "$HEADERS"
 
 echo "[*] Wordlist-based Parameter Discovery using Arjun..."
-arjun -u "https://$DOMAIN/endpoint.php" -oT arjun_active.txt -m GET,POST -w "$WORDLIST" -t 10 --rate-limit 10 --headers "$HEADERS"
+arjun -u "https://$DOMAIN/" -oT arjun_active.txt -m GET,POST -w "$WORDLIST" -t 10 --rate-limit 10 --headers "$HEADERS"
 
 echo "[*] JavaScript Vulnerability Scanning with Nuclei..."
 if [ -s alljs.txt ]; then
